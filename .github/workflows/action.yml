@@ -87,7 +87,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: create test function
-        run: 
+        run: |
             aws lambda create-function --function-name test-function1 \
               --code S3Bucket=my-bucket123450,S3Key=${{ github.sha }}.zip \
               --handler lambda_function.lambda_handler --runtime python3.8 \
